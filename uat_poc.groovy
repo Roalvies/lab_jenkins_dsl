@@ -19,6 +19,19 @@ pipelineJob('uat-poc') {
         }
     }
 
+    parameters {
+        stringParam('Tipo_Perfil', '' , 'Favor Ingrese su Perfil')
+        booleanParam('cargarproperties', false, 'Indicar si desea cargar archivo de propiedades.')
+    }
+
+    parameters {
+        gitParam('branch') {
+            description 'Favor seleccione branch'
+            type 'BRANCH'
+            default 'master'
+        }
+    }
+
     definition {
         cps {
             script(readFileFromWorkspace('uat.jenkinsfile'))
