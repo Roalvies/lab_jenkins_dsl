@@ -28,7 +28,7 @@ pipelineJob('uat-poc') {
         gitParam('branch') {
             description 'Favor seleccione branch'
             type 'BRANCH'
-            default 'dev'
+            defaultValue 'dev'
         }
     }
 
