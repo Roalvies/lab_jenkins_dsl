@@ -1,7 +1,7 @@
 pipelineJob('uat-poc') {
     definition {
         cps {
-            script(readFileFromWorkspace(aut-poc.jenkinsfile))
+            script(readFileFromWorkspace(aut.jenkinsfile))
             sandbox()
         }
     }
@@ -16,6 +16,13 @@ pipelineJob('uat-poc') {
 
                 description('Selecciona la maquina para desplegar el proyecto')
             }
+        }
+    }
+
+    definition {
+        cps {
+            script(readFileFromWorkspace('uat.jenkinsfile'))
+            sandbox()
         }
     }
 }
