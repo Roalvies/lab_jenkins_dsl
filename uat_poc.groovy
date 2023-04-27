@@ -1,7 +1,7 @@
 pipelineJob('uat-poc') {
     definition {
         cps {
-            script(readFileFromWorkspace(aut.jenkinsfile))
+            script(readFileFromWorkspace('aut.jenkinsfile'))
             sandbox()
         }
     }
