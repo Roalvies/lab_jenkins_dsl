@@ -1,21 +1,34 @@
-pipelineJob('uat-poc') {
+pipelineJob('Job-poc') {
     definition {
         cps {
-            script(readFileFromWorkspace('aut.jenkinsfile'))
+            script(readFileFromWorkspace('uat.jenkinsfile'))
             sandbox()
         }
     }
-
-    parameters{
+    
+    parameters {
         activeChoiseParam('DESTINO'){
             choiceType('SINGLE_SELECT')
-            groovyScripts{
-                script(['Asp','Clou_B','Cloud_C'])
-
-                fallbackScript('return ["ERROR"]')
-
-                description('Selecciona la maquina para desplegar el proyecto')
+            groovyScripts {
+                script("['q1','q2','q3','q4','q5']")
+            
+            fallbackScript('return ["ERROR"]')
+            
+            description('Seleccion el Destino del proyecto. (Campo obligatorio)')
             }
+        }
+    }
+
+    parameters {
+        stringParam('Tipo_Perfil', '' , 'Favor Ingrese su Perfil')
+        booleanParam('cargarproperties', false, 'Indicar si desea cargar archivo de propiedades.')
+    }
+
+    parameters {
+        gitParam('branch') {
+            description 'Favor seleccione branch'
+            type 'BRANCH'
+            default 'master'
         }
     }
 
