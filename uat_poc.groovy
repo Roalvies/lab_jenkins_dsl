@@ -7,7 +7,7 @@ pipelineJob('uat-poc') {
     }
 
    parameters {
-        activeChoiseParam('DESTINO') {
+        activeChoiceParam('DESTINO') {
             choiceType('SINGLE_SELECT')
             groovyScript {
                 script("['q1','q2','q3','q4','q5']")
@@ -28,7 +28,7 @@ pipelineJob('uat-poc') {
         gitParam('branch') {
             description 'Favor seleccione branch'
             type 'BRANCH'
-            defaultValue 'dev'
+            defaultValue 'master'
         }
     }
 
