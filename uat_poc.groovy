@@ -10,7 +10,7 @@ pipelineJob('uat-poc') {
         activeChoiceParam('DESTINO') {
             choiceType('SINGLE_SELECT')
             groovyScript {
-                script("['q1','q2','q3','q4','q5']")
+                script(['q1','q2','q3','q4','q5'])
             
             fallbackScript('return ["ERROR"]')
             
