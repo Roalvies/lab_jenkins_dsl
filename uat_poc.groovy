@@ -1,16 +1,16 @@
 pipelineJob('uat-poc') {
     definition {
         cps {
-            script(readFileFromWorkspace('uat.jenkinsfile'))
+            script(readFileFromWorkspace(aut.jenkinsfile))
             sandbox()
         }
     }
 
     parameters{
-        activeChoiseParam('Destino del Proyecto'){
+        activeChoiseParam('DESTINO'){
             choiceType('SINGLE_SELECT')
-            groovyScript {
-                script("['Asp','Clou_B','Cloud_C']")
+            groovyScriptS {
+                script(['Asp','Clou_B','Cloud_C'])
 
                 fallbackScript('return [ERROR]')
 
