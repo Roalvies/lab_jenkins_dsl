@@ -9,10 +9,10 @@ pipelineJob('uat-poc') {
     parameters{
         activeChoiseParam('DESTINO'){
             choiceType('SINGLE_SELECT')
-            groovyScriptS {
+            groovyScripts{
                 script(['Asp','Clou_B','Cloud_C'])
 
-                fallbackScript('return [ERROR]')
+                fallbackScript('return ["ERROR"]')
 
                 description('Selecciona la maquina para desplegar el proyecto')
             }
