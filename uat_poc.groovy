@@ -6,15 +6,15 @@ pipelineJob('uat-poc') {
         }
     }
 
-    parameters{
+   parameters {
         activeChoiseParam('DESTINO'){
             choiceType('SINGLE_SELECT')
-            groovyScripts{
-                script(['Asp','Clou_B','Cloud_C'])
-
-                fallbackScript('return ["ERROR"]')
-
-                description('Selecciona la maquina para desplegar el proyecto')
+            groovyScripts {
+                script("['q1','q2','q3','q4','q5']")
+            
+            fallbackScript('return ["ERROR"]')
+            
+            description('Seleccion el Destino del proyecto. (Campo obligatorio)')
             }
         }
     }
